@@ -1,5 +1,6 @@
 import sqlite3
 import matplotlib.pyplot as plt
+import numpy as np
 
 dbname = "Record.sqlite3"
 conn = sqlite3.connect(dbname)
@@ -24,10 +25,10 @@ def ave(subject):
             cnt += 1
     return sum/cnt
 
-print(ave(Japanese))
-print(ave(Math))
-print(ave(English))
-
+# 平均
+print("Japanese;" + str(ave(Japanese)))
+print("Math:" + str(ave(Math)))
+print("English:" + str(ave(English)))
 
 def mark(subject):
     all = []
@@ -41,6 +42,7 @@ print(mark(English))
 # 点数のタプル
 points = (mark(Japanese), mark(English))
 
+print(points)
 # 箱ひげ図
 fig, ax = plt.subplots()
 
